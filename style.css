@@ -1,0 +1,163 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    position: relative;
+    font-family: "Montserrat Alternates", serif;
+}
+body{
+    overflow: hidden;
+}
+button{
+    cursor: pointer;
+}
+input:focus {
+     outline: none; border: none; 
+    }
+#welcome{
+    position: absolute;
+    margin: auto;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    font-size: 36px;
+    font-style: italic;
+    cursor: pointer;
+    background-image: #fff;
+    border: 0px solid #ffffff00;
+    border-radius: 360px;
+    width: 300px;
+    height: 300px;
+    transition: all .3s;
+}
+
+@property --angle{
+    syntax: "<angle>";
+    initial-value: 0deg;
+    inherits: false;
+}
+/*#e81416, #faeb36,#ffa500,#79c314,#70369d, #e81416*/
+#welcome::after, #welcome::before{
+    background-image: conic-gradient(from var(--angle) ,black, red,black);
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 50%;
+    left: 50%;
+    translate: -50% -50%;
+    z-index: -1;
+    padding: 3px;
+    border-radius: 360px;
+    animation: 3s spin linear infinite;
+}
+#welcome::before{
+    filter: blur(2.5rem);
+}
+
+@keyframes spin{
+    from{
+        --angle: 0deg;
+    }
+    to{
+        --angle: 360deg;
+    }
+}
+
+.hiden{
+    display: none;
+}
+/* REGISTERFORM */
+#registerform{
+    position: absolute;
+    margin: auto;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 500px;
+    height: 600px;
+    border: 1px solid black;
+    padding: 20px;
+    text-align: center;
+    padding-top: 100px;
+    font-size: 20px;
+    border-radius: 30px;
+    overflow: hidden;
+}
+#formlogin{
+    position: absolute;
+    top: 144px;
+    right: -440px;
+    width: 100%;
+    transition: all .5s;
+}
+#formregister{
+    transition: all .5s;
+}
+#registerform input{
+    border: 1px solid black;
+    margin: 30px;
+    width: 70%;
+    height: 8%;
+    border-radius: 20px;
+    padding: 10px;
+    transition: .2s all;
+}
+#registerform input:focus{
+    transform: scale(1.03);
+}
+.insertbutton{
+    color: #fff;
+    margin: 30px;
+    border-radius: 20px;
+    width: 70%;
+    height: 40px;
+    transition: .2s all;
+    border: none;
+    background-color: black;
+}
+#registerform button:hover{
+    transform: scale(1.1);
+}
+#registerform span{
+    margin: 50px;
+}
+.registerbutton{
+    font-size: 18px;
+    border: none;
+    background-color: transparent;
+    color: #000;
+    margin: -40px 50px 20px 50px;
+    scale: .8;
+    opacity: .5;
+    transition: all .5s;
+}
+.activate{
+    
+    text-decoration: underline;
+    scale: 1.2;
+    opacity: 1;
+}
+.InputError{
+    position: absolute;
+    font-size: 11px;
+    top: 25px;
+    left: 30px;
+    color: red;
+    text-align: left;
+}
+#inputErrorPasswordReg{
+    top: 125px;
+}
+#inputErrorEmailReg{
+    top: 225px;
+}
+#inputErrorPasswordLog{
+    top: 125px;
+}
+.container{
+    width: 100vw;
+    height: 100vh;
+}
