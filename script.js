@@ -32,6 +32,7 @@ function signup() {
   correctInputCheckPasswordReg()
   correctInputCheckEmailReg()
   correctInputCheckEmailRegMail()
+
 }
 
 function signin(){
@@ -92,5 +93,52 @@ function correctInputCheckPasswordLog(){
   let lengthPasswordLog = passwordInputLog.value.length
   if (lengthPasswordLog>15) inputErrorPasswordLog.textContent = '*Количество символов не должно быть больше 15!'
   else if (lengthPasswordLog < 8) inputErrorPasswordLog.innerHTML ='*Количество символов не должно быть меньше 8!'
+  else if(!/[0-9]/.test(passwordInputLog.value)) inputErrorPasswordLog.innerHTML = '*Пароль должен содержать хотябы одну цыфру!'
+  else if(!/[a-z]/.test(passwordInputLog.value)) inputErrorPasswordLog.innerHTML = '*Пароль должен содержать хотябы одну латинскую букву!'
+  else if(!/[A-Z]/.test(passwordInputLog.value)) inputErrorPasswordLog.innerHTML = '*Пароль должен содержать хотябы одну <br>   заглавную букву!'
   else if (5>lengthPasswordLog<15) inputErrorPasswordLog.innerHTML = ''
+}
+
+let passwordVisionReg = document.getElementById('passwordVisionReg')
+let passwordVisionImgReg = document.getElementById('passwordVisionImageReg')
+var passwordVisibilityImg = document.querySelector('.passwordVision')
+let passwordVisibility = false
+
+function passwordVisibleReg(){
+  if (passwordVisibility == false) {
+    passwordVisibility = true
+    passwordVisionImgReg.src = 'C:/Projects/git/Assets/img/eye.png'
+    passwordInputReg.type='text'
+    passwordVisibilityImg.style.bottom = ''
+    console.log(passwordVisibility)
+    return
+  }
+  else if (passwordVisibility == true) {
+    passwordVisibility = false
+    passwordVisionImgReg.src = 'C:/Projects/git/Assets/img/eyeclose.png'
+    passwordInputReg.type='password'
+    console.log(passwordVisibility)
+    return
+  }
+}
+
+let passwordVisionLog = document.getElementById('passwordVisionLog')
+let passwordVisionImgLog = document.getElementById('passwordVisionImageLog')
+let passwordVisibilityLog = false
+
+function passwordVisibleLog(){
+  if (passwordVisibilityLog == false) {
+    passwordVisibilityLog = true
+    passwordVisionImgLog.src = 'C:/Projects/git/Assets/img/eye.png'
+    passwordInputLog.type='text'
+    console.log(passwordVisibilityLog)
+    return
+  }
+  else if (passwordVisibilityLog == true) {
+    passwordVisibilityLog = false
+    passwordVisionImgLog.src = 'C:/Projects/git/Assets/img/eyeclose.png'
+    passwordInputLog.type='password'
+    console.log(passwordVisibilityLog)
+    return
+  }
 }

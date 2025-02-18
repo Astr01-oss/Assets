@@ -37,9 +37,9 @@ input:focus {
     initial-value: 0deg;
     inherits: false;
 }
-/*#e81416, #faeb36,#ffa500,#79c314,#70369d, #e81416*/
+
 #welcome::after, #welcome::before{
-    background-image: conic-gradient(from var(--angle) ,black, red,black);
+    background-image: conic-gradient(from var(--angle) ,#e81416, #faeb36,#ffa500,#79c314,#70369d, #e81416);
     content: '';
     position: absolute;
     width: 100%;
@@ -156,6 +156,24 @@ input:focus {
 }
 #inputErrorPasswordLog{
     top: 125px;
+}
+.passwordVision{
+    background: none;
+    position: absolute;
+    right: 80px;
+    top: 135px;
+    width: 20px;
+    height: 20px;
+    border: none;
+    transition: all .2s;
+}
+#passwordVisionLog{
+    right: 90px;
+}
+.passwordVisionImage{
+    scale: .22;
+    position: absolute;
+    left: -60px;
 }
 .container{
     width: 100vw;

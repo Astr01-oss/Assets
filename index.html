@@ -14,13 +14,14 @@
 <body>
     <div class="overllay" id="overllay"></div>
     <div class="container">
-        <!-- <button id="welcome" onclick="hide()">WELCOME</button> -->
-        <div id="registerform" class="">
+        <button id="welcome" onclick="hide()">WELCOME</button>
+        <div id="registerform" class="hiden">
             <button id="register" class="registerbutton activate" onclick="registerform()" disabled>Register</button> <button id="login" class="registerbutton" onclick="loginform()">Login</button><br>
             <div id="formregister">
                 <input type="text" placeholder="Login" id="loginInputReg"><br>
                 <span id="inputErrorLoginReg" class="InputError"></span>
                 <input type="password" placeholder="Password" id="passwordInputReg"><br>
+                <button class="passwordVision" id="passwordVisionReg" onclick="passwordVisibleReg()"><img class="passwordVisionImage" id="passwordVisionImageReg" src='C:\Projects\git\Assets\img\eyeclose.png' style="bottom: -35px;"></button>
                 <span id="inputErrorPasswordReg" class="InputError"></span>
                 <input type="text" placeholder="Email" id="email"><br>
                 <span id="inputErrorEmailReg" class="InputError" ></span>
@@ -29,8 +30,9 @@
             <div id="formlogin">
                 <input type="text" placeholder="Login" id="loginInputLog"><br>
                 <span id="inputErrorLoginLog" class="InputError"></span>
-                <input type="password" placeholder="Password" id="passwordInputLog"><br>
+                <input type="password" placeholder="Password" id="passwordInputLog" class="PasswordStyle"><br>
                 <span id="inputErrorPasswordLog" class="InputError"></span>
+                <button class="passwordVision" id="passwordVisionLog" onclick="passwordVisibleLog()"><img class="passwordVisionImage" id="passwordVisionImageLog" src='C:\Projects\git\Assets\img\eyeclose.png' style="bottom: -35px;"></button>
                 <button id="signinbutt" class='insertbutton' onclick="signin()">Sign In</button> 
             </div>
         </div>
